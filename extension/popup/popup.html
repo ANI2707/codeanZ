@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Complexity Analyzer</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <header class="popup-header">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3v18h18"/>
+                        <path d="M7 12h10"/>
+                        <path d="M7 8h7"/>
+                        <path d="M7 16h6"/>
+                    </svg>
+                </div>
+                <div class="header-text">
+                    <h1>DSA Analyzer</h1>
+                    <p>Complexity Analysis Tool</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="popup-main">
+            <!-- API Key Section -->
+            <section class="api-key-section" id="apiKeySection">
+                <div class="section-header">
+                    <h2>Configuration</h2>
+                    <span class="status-indicator" id="apiKeyStatus"></span>
+                </div>
+                <div class="input-group">
+                    <label for="apiKeyInput">OpenAI API Key</label>
+                    <div class="input-with-button">
+                        <input type="password" id="apiKeyInput" placeholder="sk-..." />
+                        <button id="saveApiKey" class="btn-primary">Save</button>
+                    </div>
+                    <p class="input-help">Your API key is stored locally and encrypted</p>
+                </div>
+            </section>
+
+            <!-- Quick Analyze Section -->
+            <section class="analyze-section">
+                <div class="section-header">
+                    <h2>Quick Analysis</h2>
+                </div>
+                <div class="analyze-content">
+                    <textarea id="codeInput" placeholder="Paste your code here for quick analysis..."></textarea>
+                    <div class="analyze-controls">
+                        <select id="languageSelect">
+                            <option value="javascript">JavaScript</option>
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="cpp">C++</option>
+                            <option value="c">C</option>
+                            <option value="go">Go</option>
+                            <option value="rust">Rust</option>
+                        </select>
+                        <button id="analyzeBtn" class="btn-primary">
+                            <span class="btn-text">Analyze</span>
+                            <span class="btn-loading" style="display: none;">
+                                <div class="spinner"></div>
+                                Analyzing...
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="section-header">
+                    <h2>Analysis Results</h2>
+                </div>
+                <div id="resultsContent"></div>
+            </section>
+
+            <!-- History Section -->
+            <section class="history-section">
+                <div class="section-header">
+                    <h2>Recent Analysis</h2>
+                    <button id="clearHistory" class="btn-text">Clear</button>
+                </div>
+                <div id="historyContent" class="history-list">
+                    <!-- History items will be populated here -->
+                </div>
+            </section>
+        </main>
+
+        <footer class="popup-footer">
+            <div class="footer-actions">
+                <button id="openWebApp" class="btn-secondary">Open Web App</button>
+                <button id="settings" class="btn-text">Settings</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
