@@ -66,6 +66,8 @@ class DSAAnalyzerBackground {
     
     const systemPrompt = `You are an expert algorithm analyst. Analyze code for time and space complexity.
 
+      CRITICAL: Respond with ONLY a valid JSON object. No explanatory text, no markdown formatting, no code blocks.
+
     Return a JSON response with this exact structure:
     {
       "timeComplexity": {

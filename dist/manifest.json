@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "DSA Complexity Analyzer",
+  "version": "1.0.0",
+  "description": "Analyze time and space complexity of algorithms with AI-powered insights",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://www.hackerrank.com/*",
+    "https://www.codechef.com/*",
+    "https://codeforces.com/*",
+    "https://www.geeksforgeeks.org/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/*",
+        "https://www.hackerrank.com/*",
+        "https://www.codechef.com/*",
+        "https://codeforces.com/*",
+        "https://www.geeksforgeeks.org/*"
+      ],
+      "js": ["content/content-script.js"],
+      "css": ["content/content-styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "DSA Complexity Analyzer",
+    "default_icon": {
+      "16": "assets/icon-16.png",
+      "32": "assets/icon-32.png",
+      "48": "assets/icon-48.png",
+      "128": "assets/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["popup/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -85,7 +85,7 @@ export default function Home() {
   return (
     <div className="container mx-auto p-6 max-w-7xl">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-2 ">DSA Complexity Analyzer</h1>
+        <h1 className="text-4xl font-bold mb-2">DSA Complexity Analyzer</h1>
         <p className="text-muted-foreground text-lg">
           Analyze time and space complexity of your algorithms with AI-powered insights
         </p>
